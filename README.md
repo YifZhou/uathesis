@@ -7,3 +7,9 @@ College requirements.
 In addition, a new class format for writting dissertation proposals was added.
 
 Please see README.txt for further information.
+
+YZ:
+
+Removed several example files
+
+Use stix2 package for better? serif and math fonts.
