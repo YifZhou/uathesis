@@ -25,37 +25,50 @@
 %\usepackage{algorithm}
 %\usepackage{algorithmic}
 \usepackage[ruled,boxed,noend]{algorithm2e}
-\usepackage{graphicx}
-\usepackage{natbib}			% natbib is available on most systems, and is
-					% terribly handy.
-					% If you want to use a different Bibliography package, 
-					% you should be able to, just change this
-					% and the \bibliographystyle command below.  Be warned
-					% that you may need to do a little hacking to get
-					% the REFERENCES item to show up in your TOC.
 
-% Compatibility with the AASTEX package 
-% of the American Astronomical Society.
-%\usepackage{deluxetable}		% Allows use of AASTEX deluxe tables
-%\usepackage{aastex_hack}		% Allows other AASTEX functionality.
+\usepackage{color}
+\usepackage{xcolor}
+% Compatibility with the AASTEX package of the American Astronomical Society.
+\usepackage{deluxetable}		% Allows use of AASTEX deluxe tables
+\usepackage{aastex_hack}		% Allows other AASTEX functionality.
 
-\usepackage{stix2}
-\usepackage{amsmath,amssymb,amsfonts}			% AMS Math (advanced math typesetting)
+\usepackage[utf8]{inputenc}
+\usepackage{stix}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}			% AMS Math (advanced math typesetting)
+\usepackage{multirow}
 \usepackage{bm}
+\usepackage{graphicx}
+\usepackage[section]{placeins}
+\usepackage{natbib}
+% natbib is available on most systems, and is terribly handy. If you want to use a different Bibliography package, you should be able to, just change this and the \bibliographystyle command below.  Be warned that you may need to do a little hacking to get the REFERENCES item to show up in your TOC.
+
+
 %\usepackage{lscape}			% Used for making fitting large tables in by putting them landscape
 %\usepackage{refs}			
 %
-% If you are using hyper-ref (recommended), this command must go after all 
-% other package inclusions (from the hyperref package documentation).
-% The purpose of hyperref is to make the PDF created extensively
-% cross-referenced.
-\usepackage[bookmarks,colorlinks=true,urlcolor=black,linkcolor=black,citecolor=black]{hyperref}
+% If you are using hyper-ref (recommended), this command must go after all  other package inclusions (from the hyperref package documentation).
+% The purpose of hyperref is to make the PDF created extensively cross-referenced.
 
+% Use AASTeX62's color configuration for the links
+\definecolor{xlinkcolor}{cmyk}{1,1,0,0}
+% \usepackage[bookmarks,colorlinks=true,urlcolor=black,linkcolor=black,citecolor=black]{hyperref}
+\usepackage[bookmarks=true, pdfnewwindow=true, % links in new window
+colorlinks=true, % false: boxed links; true: colored links
+linkcolor=black, % color of internal links
+citecolor=xlinkcolor, % color of links to bibliography
+filecolor=xlinkcolor, % color of file links
+urlcolor=xlinkcolor, % color of external links
+final=true ]{hyperref}
+     
+\usepackage{cleveref}
+\DeclareUnicodeCharacter{2212}{-}
 
 % Set up some values.
 \completetitle{Dissertation Title}
-\fullname{Yifan Zhou} % Grad college wants your full name here.
+\fullname{Yifan Zhou} % Grad college oupwants your full name here.
 \degreename{Doctor of Philosophy}	% Title of your degree.
+
+
 
 \begin{document}
 
@@ -107,10 +120,8 @@
 
 % Include the various chapters
 \include{mainmatter/introduction}
-
 % Include the various appendices
 \appendix
-\include{appendix_A}
 
 % Switch the spacing to single-spaced for the references
 \renewcommand{\baselinestretch}{1}		% changing the value
@@ -118,7 +129,7 @@
 
 % Create the References list
 \bibliographystyle{uabibnat}
-\bibliography{library.bib}
+\bibliography{bibliography.bib}
 
 \end{document}
 

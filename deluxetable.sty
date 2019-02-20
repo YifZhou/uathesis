@@ -11,6 +11,10 @@
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]% 
 \ProvidesPackage{deluxetable}% 
 
+%\makeatletter
+\def\@to{to}
+\RequirePackage{lscape}
+
 \newcommand\nodata{ ~$\cdots$~ }% 
 \newcommand\ulap[1]{\vbox\@to\z@{{\vss#1}}}% 
 \newcommand\dlap[1]{\vbox\@to\z@{{#1\vss}}}% 
@@ -431,6 +435,8 @@
  \vspace*{3ex}{% 
  \parbox{\pt@width}{\hskip1em{\sc Note.---}#1}\par}% 
 }% 
+
+%\makeatother
 \endinput 
 %% 
 %% ................................... End of file `deluxetable.sty'.

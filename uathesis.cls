@@ -30,10 +30,11 @@
 \ProvidesClass{uathesis}[2013/07/03 University of Arizona Thesis Class]
 
 \RequirePackage{ifthen}
-\RequirePackage{cclicenses} % This is used to generate the Creative Commons
-									 % icons.  cclicenses.sty should be present along
-									 % with this file.  If you don't plan on using a
-									 % CC license, you can remove this.
+% \RequirePackage{cclicenses} % This is used to generate the Creative Commons
+% 									 % icons.  cclicenses.sty should be present along
+% 									 % with this file.  If you don't plan on using a
+% 									 % CC license, you can remove this.
+\RequirePackage{ccicons}
 
 
 %% This class file will be based off of the book class, no need to
@@ -562,9 +563,9 @@ by
 % This puts in the Copyright statement
 \ifthenelse{\boolean{Copyright}}{\footnotesize~~~Copyright \copyright\ \FullName\ #2}{}	
 % Creative Commons licenses	
-\ifthenelse{\boolean{CCBY}}{\footnotesize\cc \by Creative Commons Attribution 3.0 License}{}		
-\ifthenelse{\boolean{CCBYSA}}{\footnotesize\cc \bysa Creative Commons Attribution-Share Alike 3.0 License}{}		
-\ifthenelse{\boolean{CCBYND}}{\footnotesize\cc \bynd Creative Commons Attribution-No 
+\ifthenelse{\boolean{CCBY}}{\footnotesize\ccby{} Creative Commons Attribution 3.0 License}{}		
+\ifthenelse{\boolean{CCBYSA}}{\footnotesize\ccbysa{} Creative Commons Attribution-Share Alike 3.0 License}{}		
+\ifthenelse{\boolean{CCBYND}}{\footnotesize\ccbynd{} Creative Commons Attribution-No 
 Derivative Works 3.0 License}{}
 \small\normalsize					% size switch to make the spacing behave
 
